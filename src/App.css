@@ -1,0 +1,101 @@
+.App {
+            margin: 197px 0px 0px 527px;
+            background-color: #1f2a38; /* Color de fondo más claro que el App */
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 380px; /* Limite de ancho para escritorio */
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            border: 1px solid #2e3b4b; /* Borde sutil */
+            
+}
+.tw-followCard {
+    
+    width: 300px;   
+    border-radius: 16px; /* Bordes redondeados */
+    display: flex;
+    align-items: center;
+    color: #fff; /* Típico color de texto en fondos oscuros */
+    font-size: .8rem;
+    justify-content: space-between;
+    
+    transition: background-color 0.2s ease; /* Transición suave para el hover */
+}
+
+.tw-followCard-header {
+    /* Contenedor del avatar e información */
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Aumentamos ligeramente la separación entre avatar y texto */
+}
+
+.tw-followCard-avatar img { /* Corregimos el selector para que apunte a la imagen dentro del avatar */
+    /* Estilo del avatar */
+    width: 40px; /* Tamaño de avatar más típico de la sección de "A quién seguir" */
+    height: 40px;
+    border-radius: 9999px; /* Mejor usar un número grande para asegurar el círculo */
+}
+
+.tw-followCard-info {
+    /* Información del usuario */
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-left: 15px;
+}
+
+.tw-followCard-info strong {
+    /* Nombre completo (Negrita por defecto) */
+    font-weight: 700;
+}
+
+.tw-followCard-infoUserName {
+    /* Nombre de usuario (@) */
+    opacity: 0.6;
+    font-weight: 400; /* Menos negrita que el nombre completo */
+}
+
+/* --- SECCIÓN DERECHA (BOTÓN) --- */
+.tw-followCard-button.is-following{
+    border: 1px solid red;
+    background: red;
+    color: #fff;
+}
+/* ESTILO BASE DEL BOTÓN */
+.tw-followCard-button {
+    cursor: pointer;
+    margin-left: 16px; /* Separación del lado derecho */
+    border: 0;
+    border-radius: 9999px;
+    padding: 6px 16px;
+    font-weight: bold;
+    /* Ajustes visuales */
+    line-height: 1.2;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* 1. BOTÓN CUANDO NO SE ESTÁ SIGUIENDO (Botón principal) */
+.tw-followCard-button.is-following { /* Esta clase debe añadirse cuando 'isFollowing' es true */
+    background-color: #fff;
+    color: #000;
+}
+
+.tw-followCard-button.is-following:hover {
+    /* Cambio de texto y color al hacer hover */
+    background-color: #ff0000; /* Color rojo de "Dejar de seguir" */
+    color: #fff;
+    opacity: 0.8;
+}
+
+/* 2. BOTÓN CUANDO SÍ SE ESTÁ SIGUIENDO (Botón secundario, azul) */
+.tw-followCard-button:not(.is-following) { 
+    background-color: #0f1419; /* Fondo oscuro (o el azul de Twitter si prefieres) */
+    color: #fff;
+    border: 1px solid #536471; /* Borde gris sutil */
+}
+
+.tw-followCard-button:not(.is-following):hover {
+    background-color: #1a2730; /* Un poco más oscuro en el hover */
+}
